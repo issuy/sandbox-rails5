@@ -1,2 +1,6 @@
 LineLength:
   Max: 120
+
+MixinUsage:
+  Include:
+    - app/**/*.rb
