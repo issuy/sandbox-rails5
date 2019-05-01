@@ -65,3 +65,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Static code analyzer and code formatter
 gem 'rubocop', require: false
+
+# Testing framework to Ruby on Rails
+gem 'rspec', require: false

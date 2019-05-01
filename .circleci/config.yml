@@ -1,5 +1,21 @@
 version: 2
 jobs:
+  rspec:
+    docker:
+      - image: circleci/ruby
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: rm docker-compose.override.yml
+          command: rm docker-compose.override.yml
+      - run:
+          name: docker-compose build
+          command: docker-compose build
+      - run:
+          name: run rspec
+          command: docker-compose run web bundle exec rspec
   rubocop:
     docker:
       - image: circleci/ruby
@@ -20,4 +36,5 @@ workflows:
   version: 2
   test-pullrequest:
     jobs:
+      - rspec
       - rubocop
