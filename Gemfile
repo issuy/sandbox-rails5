@@ -68,3 +68,7 @@ gem 'rubocop', require: false
 
 # Testing framework to Ruby on Rails
 gem 'rspec', require: false
+
+# A Ruby on Rails plugin that integrates AWS services
+gem 'aws-sdk-rails'
+gem 'aws-sdk-s3'
