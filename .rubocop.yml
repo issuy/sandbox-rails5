@@ -1,5 +1,15 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+
 LineLength:
   Max: 120
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
 
 MixinUsage:
   Include:
