@@ -68,3 +68,6 @@ gem 'rubocop', require: false
 
 # Testing framework to Ruby on Rails
 gem 'rspec', require: false
+
+# A Ruby wrapper for the OAuth 2.0 specification
+gem 'oauth2'
