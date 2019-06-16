@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-# Authentication Code Flow Example
+# Authentication Code Flow Example.
+# This code does not work. Please set to use a verifiable authentication server.
 class Oauth2Controller < ApplicationController
   require 'oauth2'
 
