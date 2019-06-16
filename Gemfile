@@ -44,6 +44,8 @@ group :development, :test do
 end
 
 group :development do
+  # For debugger
+  gem 'debase', require: false
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
@@ -52,7 +54,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # For debugger
   gem 'ruby-debug-ide', require: false
-  gem 'debase', require: false
 end
 
 group :test do
