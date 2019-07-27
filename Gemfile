@@ -75,3 +75,6 @@ gem 'rspec', require: false
 
 # A Ruby wrapper for the OAuth 2.0 specification
 gem 'oauth2'
+
+# Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3). This gem is part of the AWS SDK for Ruby.
+gem 'aws-sdk-s3', require: false
