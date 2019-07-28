@@ -13,7 +13,7 @@
 <p>
   <% if @item.image.attached? %>
     <strong>Image:</strong>
-    <%= image_tag url_for @item.image %>
+    <%= image_tag @item.image.variant(resize: "100x100") %>
   <% end %>
 </p>
 
