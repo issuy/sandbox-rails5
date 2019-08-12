@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @map_position.title %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @map_position.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @map_position.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_map_position_path(@map_position) %> |
+<%= link_to 'Back', map_positions_path %>

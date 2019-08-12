@@ -1,0 +1,2 @@
+class MapPosition < ApplicationRecord
+end
