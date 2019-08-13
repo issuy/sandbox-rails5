@@ -54,6 +54,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # For debugger
   gem 'ruby-debug-ide', require: false
+  # Lint your ERB or HTML files
+  gem 'erb_lint', require: false
 end
 
 group :test do
