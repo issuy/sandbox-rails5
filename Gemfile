@@ -78,3 +78,6 @@ gem 'oauth2'
 
 # Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3). This gem is part of the AWS SDK for Ruby.
 gem 'aws-sdk-s3', require: false
+
+# Easiest way to add multi-environment yaml settings to Rails, Sinatra, Pandrino and other Ruby projects.
+gem 'config'
