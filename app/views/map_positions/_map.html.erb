@@ -1,0 +1,17 @@
+<div id="map"></div>
+<script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: {lat: 49.496675, lng: -102.65625}
+        });
+
+        var georssLayer = new google.maps.KmlLayer({
+            url: ''
+        });
+        georssLayer.setMap(map);
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=<%= Settings.google_api_key %>&callback=initMap">
+</script>
