@@ -1,0 +1,2 @@
+module MapGeoHelper
+end
