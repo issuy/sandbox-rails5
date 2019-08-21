@@ -7,7 +7,7 @@
         });
 
         var georssLayer = new google.maps.KmlLayer({
-            url: ''
+            url: '<%= url_for only_path: false, controller: :map_geo, action: :show, id: 1 %>'
         });
         georssLayer.setMap(map);
     }
