@@ -7,7 +7,7 @@
         });
 
         var georssLayer = new google.maps.KmlLayer({
-            url: '<%= url_for only_path: false, controller: :map_geo, action: :index, format: 'feed-georss' %>'
+            url: '<%= url_for only_path: false, controller: :map_geo, action: :index, format: 'feed-georss', updated_at: @last_updated_at.to_i %>'
         });
         georssLayer.setMap(map);
     }

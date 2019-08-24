@@ -8,6 +8,8 @@ class MapPositionsController < ApplicationController
   # GET /map_positions.json
   def index
     @map_positions = MapPosition.all
+    # Temporary for cache replacement.
+    @last_updated_at = @map_positions.maximum(:updated_at)
   end
 
   # GET /map_positions/1
