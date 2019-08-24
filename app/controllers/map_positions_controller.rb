@@ -71,6 +71,6 @@ class MapPositionsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def map_position_params
-    params.require(:map_position).permit(:title, :latitude, :longitude)
+    params.require(:map_position).permit(:title, :latitude, :longitude, :image)
   end
 end

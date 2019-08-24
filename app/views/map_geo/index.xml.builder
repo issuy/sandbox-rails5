@@ -10,10 +10,10 @@ xml.feed('xmlns' => 'http://www.w3.org/2005/Atom', 'xmlns:georss' => 'http://www
     xml.name('Issuy')
     xml.email('akito.ew@gmail.com')
   end
-  @map_entries.each do |entry|
-    @entry = entry
+  @map_positions.each do |position|
+    @position = position
     xml.entry do
-      xml.title(@entry[:title])
+      xml.title(@position[:title])
       xml.link('rel' => 'alternate', 'type' => 'text/html', 'href' => 'http://example.org')
       xml.id('')
       xml.published('2019-08-15T00:00:00Z')
@@ -23,7 +23,7 @@ xml.feed('xmlns' => 'http://www.w3.org/2005/Atom', 'xmlns:georss' => 'http://www
         xml.name('hoge')
         xml.uri('')
       end
-      xml.georss(:point, "#{@entry[:latitude]} #{@entry[:longtitude]}")
+      xml.georss(:point, "#{@position[:latitude]} #{@position[:longitude]}")
     end
   end
 end
