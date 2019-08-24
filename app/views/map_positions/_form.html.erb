@@ -11,6 +11,63 @@
     </div>
   <% end %>
 
+  <div id="map"></div>
+  <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, marker;
+      function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: -34.397, lng: 150.644},
+              zoom: 15
+          });
+          marker = new google.maps.Marker({
+              map: map
+          });
+
+          // Try HTML5 geolocation.
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function(position) {
+                  var pos = {
+                      lat: position.coords.latitude,
+                      lng: position.coords.longitude
+                  };
+
+                  marker.setPosition(pos);
+                  map.setCenter(pos);
+              }, function() {
+                  handleLocationError(true, marker, map.getCenter());
+              });
+          } else {
+              // Browser doesn't support Geolocation
+              handleLocationError(false, marker, map.getCenter());
+          }
+
+          map.addListener('center_changed', function() {
+              window.setTimeout(function() {
+                  var pos = map.getCenter();
+                  marker.setPosition(pos);
+                  applyLocationToFormField(pos);
+              }, 500);
+          });
+      }
+
+      function applyLocationToFormField(pos) {
+          document.getElementById('map_position_latitude').value = pos.lat();
+          document.getElementById('map_position_longitude').value = pos.lng();
+      }
+
+      function handleLocationError(browserHasGeolocation, marker, pos) {
+          marker.setPosition(pos);
+          applyLocationToFormField(pos);
+      }
+  </script>
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=<%= Settings.google_api_key %>&callback=initMap">
+  </script>
+
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
