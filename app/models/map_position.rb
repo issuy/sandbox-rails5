@@ -2,4 +2,5 @@
 
 # MapPosition
 class MapPosition < ApplicationRecord
+  has_one_attached :image
 end

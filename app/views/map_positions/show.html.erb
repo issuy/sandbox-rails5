@@ -15,5 +15,13 @@
   <%= @map_position.longitude %>
 </p>
 
+<p>
+  <% if @map_position.image.attached? %>
+    <strong>Image:</strong>
+    <%= image_tag @map_position.image.variant(resize: "100x100") %>
+  <% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_map_position_path(@map_position) %> |
 <%= link_to 'Back', map_positions_path %>

@@ -20,6 +20,7 @@
         <td><%= map_position.title %></td>
         <td><%= map_position.latitude %></td>
         <td><%= map_position.longitude %></td>
+        <td><%= image_tag map_position.image.variant(resize: "25x25") if map_position.image.attached? %></td>
         <td><%= link_to 'Show', map_position %></td>
         <td><%= link_to 'Edit', edit_map_position_path(map_position) %></td>
         <td><%= link_to 'Destroy', map_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>

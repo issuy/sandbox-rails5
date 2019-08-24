@@ -8,6 +8,8 @@ class MapPositionsController < ApplicationController
   # GET /map_positions.json
   def index
     @map_positions = MapPosition.all
+    # Temporary for cache replacement.
+    @last_updated_at = @map_positions.maximum(:updated_at)
   end
 
   # GET /map_positions/1
@@ -71,6 +73,6 @@ class MapPositionsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def map_position_params
-    params.require(:map_position).permit(:title, :latitude, :longitude)
+    params.require(:map_position).permit(:title, :latitude, :longitude, :image)
   end
 end
