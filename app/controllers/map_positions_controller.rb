@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# MapPositionsController
 class MapPositionsController < ApplicationController
-  before_action :set_map_position, only: [:show, :edit, :update, :destroy]
+  before_action :set_map_position, only: %i[show edit update destroy]
 
   # GET /map_positions
   # GET /map_positions.json
@@ -9,8 +12,7 @@ class MapPositionsController < ApplicationController
 
   # GET /map_positions/1
   # GET /map_positions/1.json
-  def show
-  end
+  def show; end
 
   # GET /map_positions/new
   def new
@@ -18,8 +20,7 @@ class MapPositionsController < ApplicationController
   end
 
   # GET /map_positions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /map_positions
   # POST /map_positions.json
@@ -62,13 +63,14 @@ class MapPositionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_map_position
-      @map_position = MapPosition.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def map_position_params
-      params.require(:map_position).permit(:title, :latitude, :longitude)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_map_position
+    @map_position = MapPosition.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def map_position_params
+    params.require(:map_position).permit(:title, :latitude, :longitude)
+  end
 end

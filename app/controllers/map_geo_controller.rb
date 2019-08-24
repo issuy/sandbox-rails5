@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# MapGeoController
 class MapGeoController < ApplicationController
   def show
     @map_entries = [
@@ -16,12 +19,12 @@ class MapGeoController < ApplicationController
         longtitude: '-117.259367'
       },
       {
-          author: 'author 3',
-          title: 'title 3',
-          comment: 'comment 3',
-          latitude: '38.074381',
-          longtitude: '-113.259367'
-      },
+        author: 'author 3',
+        title: 'title 3',
+        comment: 'comment 3',
+        latitude: '38.074381',
+        longtitude: '-113.259367'
+      }
     ]
     render formats: :xml
   end
