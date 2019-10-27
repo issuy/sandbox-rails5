@@ -18,7 +18,7 @@ xml.feed('xmlns' => 'http://www.w3.org/2005/Atom', 'xmlns:georss' => 'http://www
       xml.id('')
       xml.published('2019-08-15T00:00:00Z')
       xml.updated('2019-08-15T00:00:00Z')
-      xml.content(ERB::Util.html_escape(render('map_content')), 'type' => 'html')
+      xml.content(render(partial: 'map_content', formats: :html), 'type' => 'html')
       xml.author do
         xml.name('hoge')
         xml.uri('')
